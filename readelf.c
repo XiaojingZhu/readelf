@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 #define EI_NIDENT  16
 
 typedef struct{
@@ -18,11 +19,12 @@ typedef struct{
 	unsigned short	e_shstrndx;
 } Elf32_Ehdr;
 
-Elf32_Ehdr elf_head;
+Elf32_Ehdr elf_header;
 
-void read(char *file,Elf32_Ehdr *elf_header)
+void read(char *filename,Elf32_Ehdr *elf_header)
 {
-	file = fopen(file,rb);
+	FILE *file ;
+	file = (FILE*)fopen(filename,"rb");
 	if(file == NULL)
 	{
 		printf("cann't open the file %s",file);
@@ -34,12 +36,24 @@ void read(char *file,Elf32_Ehdr *elf_header)
 void print(Elf32_Ehdr *elf_header)
 {
 	printf("ELF Header:\n");
-	printf("Magic: %x %x ",elf_header->e_ident[0],elf_header->e_ident[1]);
+	printf("  Magic:   ");
+	for(int i = 0; i < 16; i++)
+	{
+		printf("%x ",elf_header->ident[i];
+	}	
+	printf("\n");
+
+	printf("Class:\t\t\t");
+	for(int i = 0; i< 3; i++)
+	{
+		printf("%c",elf_header->ident[i+1];
+	}
+
 }
 
 int main(int argc, char *argv[])
 {
-	read(argv[1], elf_header);
-	print(elf_head);
+	read(argv[1], &elf_header);
+	print(&elf_header);
 	return 0;
 }
