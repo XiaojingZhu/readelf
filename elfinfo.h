@@ -32,3 +32,13 @@
 #define ELFOSABI_C6000_LINUX 65 /* Linux TMS320C6000 */
 #define ELFOSABI_ARM	     97	/* ARM */
 #define ELFOSABI_STANDALONE 255	/* Standalone (embedded) application */
+
+/*   e_machine         Machine*/
+#define EM_NONE  0   /*No machine*/
+#define EM_32    1   /*AT%T WE 32100*/
+#define EM_SPARC 2   /*SPARC*/
+#define EM_386   3   /*Intel 80386*/
+#define EM_68k   4   /*Motorola 68000*/
+#define EM_88k   5   /*Motorola 88000*/
+#define EM_860   7   /*Intel 80860*/
+#define EM_MIPS  8   /*MIPS RS3000*/
