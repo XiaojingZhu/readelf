@@ -1,0 +1,9 @@
+This program achieve readelf function 
+
+The input filename as the second parameter
+example   $./read filename
+
+
+
+author   NUAA 161330114 Wen Zhihao 
+zh.wen@hotmail.com
